@@ -37,9 +37,40 @@ public class RightTriangleStar {
 
     }
 
+    // public static void main(String[] args) {
+        
+    //     int k = 5;
+    //     StarRightTriangle(k);
+    // }
+}
+
+
+// Using Recursion
+
+class RightTriangleStar2 {
+    
+    // for printing a row
+    public static void printRow(int n) {
+
+        if (n == 0){
+            return;
+        }
+        System.out.print("* ");
+        printRow(n - 1); // for next * in the current row
+    }
+
+    public static void changeRow(int n) {
+        
+        if (n == 0) {
+            return;
+        }
+        changeRow(n - 1);
+        printRow(n);
+        System.out.println("\n");
+    }
+
     public static void main(String[] args) {
         
-        int k = 5;
-        StarRightTriangle(k);
+        RightTriangleStar2.changeRow(5);
     }
 }
